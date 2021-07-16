@@ -2,8 +2,8 @@
 # CMake project file for HAZ Fractiles
 
 cmake_minimum_required (VERSION 2.8.12)
-project (haz-fractiles)
 enable_language (Fortran)
+project (haz-fractiles LANGUAGES Fortran)
 
 option(STATIC "Enable static linking for binary distribution")
 
@@ -17,7 +17,7 @@ endif (NOT CMAKE_BUILD_TYPE)
 # default installation
 get_filename_component (default_prefix ".." ABSOLUTE)
 set (CMAKE_INSTALL_PREFIX ${default_prefix} CACHE STRING
-      "Choose the installation directory; by default it installs in the HAZ directory."
+      "Choose the installation directory; by default it installs in the build directory."
       FORCE)
 
 # FFLAGS depend on the compiler
@@ -47,7 +47,7 @@ message ("--> CMAKE_Fortran_COMPILER full path: " ${CMAKE_Fortran_COMPILER})
 message ("--> CMAKE_Fortran_FLAGS: " ${CMAKE_Fortran_FLAGS})
 
 # build executables
-file (GLOB SOURCES src/*.f)
+file (GLOB SOURCES CONFIGURE_DEPENDS src/*.f)
 set (TARGET "haz-fractiles")
 
 add_executable (${TARGET} ${SOURCES})

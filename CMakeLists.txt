@@ -2,8 +2,8 @@
 # CMake project file for HAZ Fractiles
 
 cmake_minimum_required (VERSION 2.8.12)
+project (haz-fractiles)
 enable_language (Fortran)
-project (haz-fractiles LANGUAGES Fortran)
 
 option(STATIC "Enable static linking for binary distribution")
 

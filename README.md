@@ -4,7 +4,7 @@ Calculation of fractiles from [HAZ](https://github.com/abrahamson/HAZ).
 
 ## Compiling
 
-`haz-fraciles` is written in FORTRAN and may be compiled with Intel's _ifort_
+`haz-fractiles` is written in FORTRAN and may be compiled with Intel's _ifort_
 compiler or GNU's _gfortran_ compiler.
 
 ### Windows
